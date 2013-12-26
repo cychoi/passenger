@@ -458,7 +458,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"HTTP_X_OUTPUT", (root + "/test/tmp.output").c_str(),
 			NULL);
 		writeExact(connection, "hello\n");
@@ -482,7 +482,7 @@ namespace tut {
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
 			"PASSENGER_BUFFERING", "true",
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"HTTP_X_OUTPUT", (root + "/test/tmp.output").c_str(),
 			NULL);
 		writeExact(connection, "hello\n");
@@ -515,7 +515,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"PASSENGER_BUFFERING", "true",
 			"HTTP_X_WAIT_FOR_FILE", "/tmp/wait.txt",
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
@@ -653,7 +653,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"CONTENT_LENGTH", toString(requestBody.size()).c_str(),
 			"PASSENGER_BUFFERING", "true",
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
@@ -678,7 +678,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"CONTENT_LENGTH", toString(requestBody.size()).c_str(),
 			"PASSENGER_BUFFERING", "true",
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
@@ -710,7 +710,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"CONTENT_LENGTH", toString(requestBody.size()).c_str(),
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
 			NULL);
@@ -735,7 +735,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"CONTENT_LENGTH", toString(requestBody.size()).c_str(),
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
 			NULL);
@@ -758,7 +758,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"CONTENT_LENGTH", "0",
 			"PASSENGER_BUFFERING", "true",
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
@@ -781,7 +781,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/upload",
+			"PATH_INFO", "/raw_upload_to_file",
 			"CONTENT_LENGTH", "0",
 			"HTTP_X_OUTPUT", "/tmp/output.txt",
 			NULL);
@@ -952,7 +952,7 @@ namespace tut {
 		connect();
 		sendHeaders(defaultHeaders,
 			"PASSENGER_APP_ROOT", wsgiAppPath.c_str(),
-			"PATH_INFO", "/chunked",
+			"PATH_INFO", "/chunked_stream",
 			NULL
 		);
 		

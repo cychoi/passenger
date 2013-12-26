@@ -1,0 +1,242 @@
+2013/12/26 17:58:04 [notice] 74131#0: using the "kqueue" event method
+[ 2013-12-26 17:58:05.0058 74132/0x7fff7c578310 agents/Base.cpp:1584 ]: Random seed: 1388077085
+[ 2013-12-26 17:58:05.0059 74132/0x7fff7c578310 agents/Watchdog/Main.cpp:670 ]: Starting Watchdog...
+[ 2013-12-26 17:58:05.0066 74132/0x7fff7c578310 agents/Watchdog/Main.cpp:510 ]: Options: { 'analytics_log_user' => 'hongli', 'cleanup_pidfiles' => 'L3Zhci9mb2xkZXJzLzk4LzZ0cWtqcTc5MV9sMDJyNHMycWtxMXNmdzAwMDBnbi9UL3Bhc3Nlbmdlci1zdGFuZGFsb25lLm9lZXV3ZC90ZW1wX2Rpcl90b3VjaGVyLnBpZA==', 'default_group' => 'staff', 'default_python' => 'python', 'default_ruby' => '/Users/hongli/.rvm/wrappers/ruby-1.9.3-p448/ruby', 'default_user' => 'hongli', 'log_level' => '2', 'max_pool_size' => '6', 'passenger_root' => '/var/folders/98/6tqkjq791_l02r4s2qkq1sfw0000gn/T/passenger-standalone.oeeuwd/locations.ini', 'passenger_version' => '4.0.29', 'pool_idle_time' => '300', 'prestart_urls' => 'aHR0cDovLzAuMC4wLjA6MzAwMAA=', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'false', 'web_server_passenger_version' => '4.0.29', 'web_server_pid' => '74131', 'web_server_type' => 'nginx', 'web_server_worker_gid' => '-1', 'web_server_worker_uid' => '-1' }
+[ 2013-12-26 17:58:05.0326 74134/0x7fff7c578310 agents/Base.cpp:1584 ]: Random seed: 1388077085
+[ 2013-12-26 17:58:05.0337 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:629 ]: Starting PassengerHelperAgent...
+[ 2013-12-26 17:58:05.0473 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:636 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.74131/generation-0/request
+[ 2013-12-26 17:58:05.0529 74136/0x7fff7c578310 agents/Base.cpp:1584 ]: Random seed: 1388077085
+[ 2013-12-26 17:58:05.0545 74136/0x7fff7c578310 agents/LoggingAgent/Main.cpp:330 ]: Starting PassengerLoggingAgent...
+[ 2013-12-26 17:58:05.0563 74136/0x7fff7c578310 agents/LoggingAgent/Main.cpp:318 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.74131/generation-0/logging
+[ 2013-12-26 17:58:05.0565 74132/0x7fff7c578310 agents/Watchdog/Main.cpp:697 ]: All Phusion Passenger agents started!
+2013/12/26 17:58:04 [notice] 74131#0: nginx/1.4.4
+2013/12/26 17:58:04 [notice] 74131#0: OS: Darwin 13.0.0
+2013/12/26 17:58:04 [notice] 74131#0: hw.ncpu: 4
+2013/12/26 17:58:04 [notice] 74131#0: net.inet.tcp.sendspace: 131072
+2013/12/26 17:58:04 [notice] 74131#0: kern.ipc.somaxconn: 128
+2013/12/26 17:58:04 [notice] 74131#0: getrlimit(RLIMIT_NOFILE): 2560:9223372036854775807
+2013/12/26 17:58:04 [notice] 74138#0: start worker processes
+2013/12/26 17:58:04 [notice] 74138#0: start worker process 74139
+2013/12/26 17:58:05 [info] 74139#0: *1 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:3000
+2013/12/26 17:58:05 [info] 74139#0: *2 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:3000
+[ 2013-12-26 17:58:07.0975 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:1364 ]: [Client 21] New client accepted; new client count = 1
+[ 2013-12-26 17:58:07.1004 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:1989 ]: [Client 21] Checking out session: appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:07.1004 74134/0x107d33000 Pool2/Pool.h:970 ]: asyncGet(appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi)
+[ 2013-12-26 17:58:07.1004 74134/0x107d33000 Pool2/Pool.h:992 ]: Spawning new SuperGroup
+[ 2013-12-26 17:58:07.1018 74134/0x107d76000 Pool2/Implementation.cpp:190 ]: Initializing SuperGroup /Users/hongli/Projects/passenger/test/stub/wsgi in the background...
+[ 2013-12-26 17:58:07.1025 74134/0x107d33000 Pool2/Pool.h:996 ]: asyncGet() finished
+[ 2013-12-26 17:58:07.1025 74134/0x107b87000 Pool2/Pool.h:636 ]: Garbage collection time...
+[ 2013-12-26 17:58:07.1025 74134/0x107b87000 Pool2/Pool.h:685 ]: Garbage collection done; next garbage collect in 300.000 sec
+[ 2013-12-26 17:58:07.1028 74134/0x107d76000 Pool2/Implementation.cpp:221 ]: Initialization of SuperGroup /Users/hongli/Projects/passenger/test/stub/wsgi almost done; grabbed lock
+[ 2013-12-26 17:58:07.1044 74134/0x107d76000 Pool2/Group.h:1142 ]: Requested spawning of new process for group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:07.1045 74134/0x107d76000 Pool2/Group.h:853 ]: No session checked out yet: group is spawning or restarting
+[ 2013-12-26 17:58:07.1045 74134/0x107d76000 Pool2/Implementation.cpp:255 ]: Done initializing SuperGroup /Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:07.1045 74134/0x107db9000 Pool2/DirectSpawner.h:168 ]: Spawning new process: appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:07.1059 74134/0x107db9000 Pool2/DirectSpawner.h:215 ]: Process forked for appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi: PID 74149
+App 74149 stdout: 
+[ 2013-12-26 17:58:07.3423 74134/0x107db9000 Pool2/Spawner.h:784 ]: [App 74149 stdout] !> I have control 1.0
+[ 2013-12-26 17:58:07.3425 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] You have control 1.0
+[ 2013-12-26 17:58:07.3425 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] passenger_root: /var/folders/98/6tqkjq791_l02r4s2qkq1sfw0000gn/T/passenger-standalone.oeeuwd/locations.ini
+[ 2013-12-26 17:58:07.3425 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] passenger_version: 4.0.29
+[ 2013-12-26 17:58:07.3425 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] ruby_libdir: /Users/hongli/Projects/passenger/lib
+[ 2013-12-26 17:58:07.3425 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] generation_dir: /tmp/passenger.1.0.74131/generation-0
+[ 2013-12-26 17:58:07.3426 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] gupid: 161019a-2Y3MljzmaJ8
+[ 2013-12-26 17:58:07.3426 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] connect_password: FBTkezqovbMVqx8hLJtTGmPOZehxHVsvWHovi01fhPe
+[ 2013-12-26 17:58:07.3426 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] app_root: /Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:07.3426 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] app_group_name: /Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:07.3426 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] app_type: wsgi
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] start_command: python	/Users/hongli/Projects/passenger/helper-scripts/wsgi-loader.py
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] startup_file: passenger_wsgi.py
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] process_title: Passenger WsgiApp
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] log_level: 2
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] start_timeout: 90000
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] environment: development
+[ 2013-12-26 17:58:07.3427 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] base_uri: /
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] spawn_method: smart
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] user: hongli
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] default_user: hongli
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] default_group: staff
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] ruby: /Users/hongli/.rvm/wrappers/ruby-1.9.3-p448/ruby
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] python: python
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] nodejs: node
+[ 2013-12-26 17:58:07.3428 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] logging_agent_address: unix:/tmp/passenger.1.0.74131/generation-0/logging
+[ 2013-12-26 17:58:07.3429 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] logging_agent_username: logging
+[ 2013-12-26 17:58:07.3429 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] logging_agent_password: LqHSUFY95gePxCeUTcQFxV30tt0nGO9gdIM5gg9TbX38z735Cnc8FUWd1TYpYfd0
+[ 2013-12-26 17:58:07.3429 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] debugger: false
+[ 2013-12-26 17:58:07.3429 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] analytics: false
+[ 2013-12-26 17:58:07.3429 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] group_secret: hapdp9dGMmLsJ46RFZxEG0szrVgCUMHR6WOakRQA6ZO
+[ 2013-12-26 17:58:07.3429 74134/0x107db9000 Pool2/Spawner.h:407 ]: [App 74149 stdin >>] 
+[ 2013-12-26 17:58:07.3520 74134/0x107db9000 Pool2/Spawner.h:784 ]: [App 74149 stdout] !> Ready
+[ 2013-12-26 17:58:07.3522 74134/0x107db9000 Pool2/Spawner.h:784 ]: [App 74149 stdout] !> socket: main;unix:/tmp/passenger.1.0.74131/generation-0/backends/wsgi.74149;session;1
+[ 2013-12-26 17:58:07.3524 74134/0x107db9000 Pool2/Spawner.h:784 ]: [App 74149 stdout] !> 
+[ 2013-12-26 17:58:07.3526 74134/0x107db9000 Pool2/DirectSpawner.h:245 ]: Process spawning done: appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi, pid=74149
+[ 2013-12-26 17:58:07.3603 74134/0x107db9000 Pool2/Group.h:922 ]: Attaching process (pid=74149, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default)
+[ 2013-12-26 17:58:07.3611 74134/0x107db9000 Pool2/Implementation.cpp:863 ]: New process count = 1, remaining get waiters = 0
+[ 2013-12-26 17:58:07.3611 74134/0x107db9000 Pool2/Implementation.cpp:889 ]: Spawn loop done
+[ 2013-12-26 17:58:07.3613 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:2039 ]: [Client 21] Session checked out: pid=74149, gupid=161019a-2Y3MljzmaJ8
+[ 2013-12-26 17:58:07.3614 74134/0x107b87000 Pool2/Pool.h:636 ]: Garbage collection time...
+[ 2013-12-26 17:58:07.3614 74134/0x107b87000 Pool2/Pool.h:685 ]: Garbage collection done; next garbage collect in 300.000 sec
+[ 2013-12-26 17:58:07.3615 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:2134 ]: [Client 21] Session initiated: fd=22
+[ 2013-12-26 17:58:07.3615 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:2155 ]: [Client 21] Sending headers to application
+[ 2013-12-26 17:58:07.3616 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:2293 ]: [Client 21] Begin sending body to application
+[ 2013-12-26 17:58:07.3620 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:1167 ]: [Client 21] Application sent EOF
+[ 2013-12-26 17:58:07.3621 74134/0x107d33000 Pool2/Implementation.cpp:411 ]: Session closed for process (pid=74149, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default)
+[ 2013-12-26 17:58:07.3625 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:1254 ]: [Client 21] Client output pipe ended; disconnecting client
+[ 2013-12-26 17:58:07.3625 74134/0x107d33000 agents/HelperAgent/RequestHandler.h:592 ]: [Client 21] Disconnected; new client count = 0
+[ 2013-12-26 17:58:08.0482 74134/0x107b44000 Pool2/Pool.h:751 ]: Analytics collection time...
+[ 2013-12-26 17:58:08.0577 74134/0x107b44000 Pool2/Pool.h:855 ]: Analytics collection done; next analytics collection in 4.942 sec
+2013/12/26 17:58:10 [info] 74139#0: *3 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:3000
+2013/12/26 17:58:10 [notice] 74138#0: signal 15 (SIGTERM) received, exiting
+2013/12/26 17:58:10 [notice] 74139#0: exiting
+2013/12/26 17:58:10 [notice] 74138#0: signal 23 (SIGIO) received
+2013/12/26 17:58:10 [notice] 74139#0: exit
+2013/12/26 17:58:10 [notice] 74138#0: signal 20 (SIGCHLD) received
+2013/12/26 17:58:10 [notice] 74138#0: worker process 74139 exited with code 0
+2013/12/26 17:58:10 [notice] 74138#0: exit
+[ 2013-12-26 17:58:10.9093 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:591 ]: Received command to exit gracefully. Waiting until 5 seconds after all clients have disconnected...
+[ 2013-12-26 17:58:10.9098 74132/0x7fff7c578310 agents/Watchdog/Main.cpp:710 ]: Web server exited gracefully; gracefully shutting down all agents...
+[ 2013-12-26 17:58:13.0010 74134/0x107b44000 Pool2/Pool.h:751 ]: Analytics collection time...
+[ 2013-12-26 17:58:13.0052 74134/0x107b44000 Pool2/Pool.h:855 ]: Analytics collection done; next analytics collection in 4.995 sec
+2013/12/26 17:58:13 [notice] 74266#0: using the "kqueue" event method
+[ 2013-12-26 17:58:13.4424 74267/0x7fff7c578310 agents/Base.cpp:1584 ]: Random seed: 1388077093
+[ 2013-12-26 17:58:13.4424 74267/0x7fff7c578310 agents/Watchdog/Main.cpp:670 ]: Starting Watchdog...
+[ 2013-12-26 17:58:13.4432 74267/0x7fff7c578310 agents/Watchdog/Main.cpp:510 ]: Options: { 'analytics_log_user' => 'hongli', 'cleanup_pidfiles' => 'L3Zhci9mb2xkZXJzLzk4LzZ0cWtqcTc5MV9sMDJyNHMycWtxMXNmdzAwMDBnbi9UL3Bhc3Nlbmdlci1zdGFuZGFsb25lLjE3NHJkMDQvdGVtcF9kaXJfdG91Y2hlci5waWQ=', 'default_group' => 'staff', 'default_python' => 'python', 'default_ruby' => '/Users/hongli/.rvm/wrappers/ruby-1.9.3-p448/ruby', 'default_user' => 'hongli', 'log_level' => '2', 'max_pool_size' => '6', 'passenger_root' => '/var/folders/98/6tqkjq791_l02r4s2qkq1sfw0000gn/T/passenger-standalone.174rd04/locations.ini', 'passenger_version' => '4.0.29', 'pool_idle_time' => '300', 'prestart_urls' => 'aHR0cDovLzAuMC4wLjA6MzAwMAA=', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'false', 'web_server_passenger_version' => '4.0.29', 'web_server_pid' => '74266', 'web_server_type' => 'nginx', 'web_server_worker_gid' => '-1', 'web_server_worker_uid' => '-1' }
+PassengerWatchdog(74270,0x7fff7c578310) malloc: *** mach_vm_map(size=8388608) failed (error code=268435459)
+PassengerWatchdog(74270,0x7fff7c578310) malloc: *** error: can't allocate region securely
+PassengerWatchdog(74270,0x7fff7c578310) malloc: *** set a breakpoint in malloc_error_break to debug
+[ 2013-12-26 17:58:13.4527 74269/0x7fff7c578310 agents/Base.cpp:1584 ]: Random seed: 1388077093
+[ 2013-12-26 17:58:13.4529 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:629 ]: Starting PassengerHelperAgent...
+[ 2013-12-26 17:58:13.4588 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:636 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.74266/generation-0/request
+PassengerWatchdog(74272,0x7fff7c578310) malloc: *** mach_vm_map(size=8388608) failed (error code=268435459)
+PassengerWatchdog(74272,0x7fff7c578310) malloc: *** error: can't allocate region securely
+PassengerWatchdog(74272,0x7fff7c578310) malloc: *** set a breakpoint in malloc_error_break to debug
+[ 2013-12-26 17:58:13.4633 74271/0x7fff7c578310 agents/Base.cpp:1584 ]: Random seed: 1388077093
+[ 2013-12-26 17:58:13.4651 74271/0x7fff7c578310 agents/LoggingAgent/Main.cpp:330 ]: Starting PassengerLoggingAgent...
+[ 2013-12-26 17:58:13.4667 74271/0x7fff7c578310 agents/LoggingAgent/Main.cpp:318 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.74266/generation-0/logging
+[ 2013-12-26 17:58:13.4670 74267/0x7fff7c578310 agents/Watchdog/Main.cpp:697 ]: All Phusion Passenger agents started!
+2013/12/26 17:58:13 [notice] 74266#0: nginx/1.4.4
+2013/12/26 17:58:13 [notice] 74266#0: OS: Darwin 13.0.0
+2013/12/26 17:58:13 [notice] 74266#0: hw.ncpu: 4
+2013/12/26 17:58:13 [notice] 74266#0: net.inet.tcp.sendspace: 131072
+2013/12/26 17:58:13 [notice] 74266#0: kern.ipc.somaxconn: 128
+2013/12/26 17:58:13 [notice] 74266#0: getrlimit(RLIMIT_NOFILE): 2560:9223372036854775807
+2013/12/26 17:58:13 [notice] 74273#0: start worker processes
+2013/12/26 17:58:13 [notice] 74273#0: start worker process 74274
+2013/12/26 17:58:13 [info] 74274#0: *1 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:3000
+2013/12/26 17:58:13 [info] 74274#0: *2 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:3000
+[ 2013-12-26 17:58:15.4963 74269/0x107186000 agents/HelperAgent/RequestHandler.h:1364 ]: [Client 29] New client accepted; new client count = 1
+[ 2013-12-26 17:58:15.4965 74269/0x107186000 agents/HelperAgent/RequestHandler.h:1989 ]: [Client 29] Checking out session: appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:15.4966 74269/0x107186000 Pool2/Pool.h:970 ]: asyncGet(appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi)
+[ 2013-12-26 17:58:15.4967 74269/0x107186000 Pool2/Pool.h:992 ]: Spawning new SuperGroup
+[ 2013-12-26 17:58:15.4969 74269/0x1071c9000 Pool2/Implementation.cpp:190 ]: Initializing SuperGroup /Users/hongli/Projects/passenger/test/stub/wsgi in the background...
+[ 2013-12-26 17:58:15.4969 74269/0x107186000 Pool2/Pool.h:996 ]: asyncGet() finished
+[ 2013-12-26 17:58:15.4970 74269/0x106fda000 Pool2/Pool.h:636 ]: Garbage collection time...
+[ 2013-12-26 17:58:15.4970 74269/0x106fda000 Pool2/Pool.h:685 ]: Garbage collection done; next garbage collect in 300.000 sec
+[ 2013-12-26 17:58:15.4970 74269/0x1071c9000 Pool2/Implementation.cpp:221 ]: Initialization of SuperGroup /Users/hongli/Projects/passenger/test/stub/wsgi almost done; grabbed lock
+[ 2013-12-26 17:58:15.4972 74269/0x1071c9000 Pool2/Group.h:1142 ]: Requested spawning of new process for group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:15.4974 74269/0x1071c9000 Pool2/Group.h:853 ]: No session checked out yet: group is spawning or restarting
+[ 2013-12-26 17:58:15.4974 74269/0x10720c000 Pool2/DirectSpawner.h:168 ]: Spawning new process: appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:15.4975 74269/0x1071c9000 Pool2/Implementation.cpp:255 ]: Done initializing SuperGroup /Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:15.4987 74269/0x10720c000 Pool2/DirectSpawner.h:215 ]: Process forked for appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi: PID 74287
+App 74287 stdout: 
+[ 2013-12-26 17:58:15.7300 74269/0x10720c000 Pool2/Spawner.h:784 ]: [App 74287 stdout] !> I have control 1.0
+[ 2013-12-26 17:58:15.7301 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] You have control 1.0
+[ 2013-12-26 17:58:15.7302 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] passenger_root: /var/folders/98/6tqkjq791_l02r4s2qkq1sfw0000gn/T/passenger-standalone.174rd04/locations.ini
+[ 2013-12-26 17:58:15.7302 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] passenger_version: 4.0.29
+[ 2013-12-26 17:58:15.7302 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] ruby_libdir: /Users/hongli/Projects/passenger/lib
+[ 2013-12-26 17:58:15.7302 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] generation_dir: /tmp/passenger.1.0.74266/generation-0
+[ 2013-12-26 17:58:15.7302 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] gupid: 161019a-EGTSlSFDHuN
+[ 2013-12-26 17:58:15.7303 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] connect_password: oR7utFs0gLb3bPqwLS35Ytt4zrdvSJWf7vYA4Fj9UMD
+[ 2013-12-26 17:58:15.7303 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] app_root: /Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:15.7303 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] app_group_name: /Users/hongli/Projects/passenger/test/stub/wsgi
+[ 2013-12-26 17:58:15.7303 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] app_type: wsgi
+[ 2013-12-26 17:58:15.7303 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] start_command: python	/Users/hongli/Projects/passenger/helper-scripts/wsgi-loader.py
+[ 2013-12-26 17:58:15.7304 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] startup_file: passenger_wsgi.py
+[ 2013-12-26 17:58:15.7304 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] process_title: Passenger WsgiApp
+[ 2013-12-26 17:58:15.7304 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] log_level: 2
+[ 2013-12-26 17:58:15.7304 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] start_timeout: 90000
+[ 2013-12-26 17:58:15.7304 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] environment: 8000
+[ 2013-12-26 17:58:15.7305 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] base_uri: /
+[ 2013-12-26 17:58:15.7305 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] spawn_method: smart
+[ 2013-12-26 17:58:15.7305 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] user: hongli
+[ 2013-12-26 17:58:15.7305 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] default_user: hongli
+[ 2013-12-26 17:58:15.7305 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] default_group: staff
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] ruby: /Users/hongli/.rvm/wrappers/ruby-1.9.3-p448/ruby
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] python: python
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] nodejs: node
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] logging_agent_address: unix:/tmp/passenger.1.0.74266/generation-0/logging
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] logging_agent_username: logging
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] logging_agent_password: CmAT8kiuY75Xx9NSjdLVlF09UMxM3RiPp1EvLSayeuhPMPlRT59AqbkrCjYjqdbD
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] debugger: false
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] analytics: false
+[ 2013-12-26 17:58:15.7306 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] group_secret: Brbdw7dAaUh4VFayVDPwwksPgigyazm25ELiYUwgTlO
+[ 2013-12-26 17:58:15.7307 74269/0x10720c000 Pool2/Spawner.h:407 ]: [App 74287 stdin >>] 
+[ 2013-12-26 17:58:15.7395 74269/0x10720c000 Pool2/Spawner.h:784 ]: [App 74287 stdout] !> Ready
+[ 2013-12-26 17:58:15.7396 74269/0x10720c000 Pool2/Spawner.h:784 ]: [App 74287 stdout] !> socket: main;unix:/tmp/passenger.1.0.74266/generation-0/backends/wsgi.74287;session;1
+[ 2013-12-26 17:58:15.7397 74269/0x10720c000 Pool2/Spawner.h:784 ]: [App 74287 stdout] !> 
+[ 2013-12-26 17:58:15.7399 74269/0x10720c000 Pool2/DirectSpawner.h:245 ]: Process spawning done: appRoot=/Users/hongli/Projects/passenger/test/stub/wsgi, pid=74287
+[ 2013-12-26 17:58:15.7447 74269/0x10720c000 Pool2/Group.h:922 ]: Attaching process (pid=74287, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default)
+[ 2013-12-26 17:58:15.7448 74269/0x10720c000 Pool2/Implementation.cpp:863 ]: New process count = 1, remaining get waiters = 0
+[ 2013-12-26 17:58:15.7449 74269/0x10720c000 Pool2/Implementation.cpp:889 ]: Spawn loop done
+[ 2013-12-26 17:58:15.7449 74269/0x106fda000 Pool2/Pool.h:636 ]: Garbage collection time...
+[ 2013-12-26 17:58:15.7450 74269/0x106fda000 Pool2/Pool.h:685 ]: Garbage collection done; next garbage collect in 300.000 sec
+[ 2013-12-26 17:58:15.7451 74269/0x107186000 agents/HelperAgent/RequestHandler.h:2039 ]: [Client 29] Session checked out: pid=74287, gupid=161019a-EGTSlSFDHuN
+[ 2013-12-26 17:58:15.7452 74269/0x107186000 agents/HelperAgent/RequestHandler.h:2134 ]: [Client 29] Session initiated: fd=30
+[ 2013-12-26 17:58:15.7452 74269/0x107186000 agents/HelperAgent/RequestHandler.h:2155 ]: [Client 29] Sending headers to application
+[ 2013-12-26 17:58:15.7453 74269/0x107186000 agents/HelperAgent/RequestHandler.h:2293 ]: [Client 29] Begin sending body to application
+[ 2013-12-26 17:58:15.7456 74269/0x107186000 agents/HelperAgent/RequestHandler.h:1167 ]: [Client 29] Application sent EOF
+[ 2013-12-26 17:58:15.7457 74269/0x107186000 Pool2/Implementation.cpp:411 ]: Session closed for process (pid=74287, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default)
+[ 2013-12-26 17:58:15.7457 74269/0x107186000 agents/HelperAgent/RequestHandler.h:1254 ]: [Client 29] Client output pipe ended; disconnecting client
+[ 2013-12-26 17:58:15.7458 74269/0x107186000 agents/HelperAgent/RequestHandler.h:592 ]: [Client 29] Disconnected; new client count = 0
+[ 2013-12-26 17:58:15.9108 74136/0x7fff7c578310 agents/LoggingAgent/Main.cpp:341 ]: Logging agent exiting with code 0.
+[ 2013-12-26 17:58:16.0157 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:597 ]: It's now 5 seconds after all clients have disconnected. Proceeding with graceful exit.
+[ 2013-12-26 17:58:16.0158 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:502 ]: Shutting down helper agent...
+[ 2013-12-26 17:58:16.0164 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:509 ]: Destroying application pool...
+[ 2013-12-26 17:58:16.0166 74134/0x7fff7c578310 Pool2/Group.h:788 ]: Begin shutting down group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:16.0166 74134/0x7fff7c578310 Pool2/Group.h:998 ]: Detaching all processes in group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:16.0166 74134/0x7fff7c578310 Pool2/Implementation.cpp:1028 ]: Starting detached processes checker
+[ 2013-12-26 17:58:16.0169 74134/0x107bca000 Pool2/Implementation.cpp:1065 ]: Checking whether any of the 1 detached processes have exited...
+[ 2013-12-26 17:58:16.0169 74134/0x107bca000 Pool2/Implementation.cpp:1074 ]: Detached process (pid=74149, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default) has 0 active sessions now. Triggering shutdown.
+[ 2013-12-26 17:58:16.1181 74134/0x107bca000 Pool2/Implementation.cpp:1065 ]: Checking whether any of the 1 detached processes have exited...
+[ 2013-12-26 17:58:16.1183 74134/0x107bca000 Pool2/Implementation.cpp:1082 ]: Detached process (pid=74149, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default) has shut down. Cleaning up associated resources.
+[ 2013-12-26 17:58:16.1184 74134/0x107bca000 Pool2/Process.h:470 ]: Cleaning up process (pid=74149, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default)
+[ 2013-12-26 17:58:16.1190 74134/0x107bca000 Pool2/Implementation.cpp:1106 ]: Stopping detached processes checker
+[ 2013-12-26 17:58:16.1192 74134/0x107bca000 Pool2/Group.h:625 ]: Finishing shutdown of group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:16.1372 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:538 ]: All threads have been shut down.
+[ 2013-12-26 17:58:16.1375 74134/0x7fff7c578310 agents/HelperAgent/Main.cpp:646 ]: Helper agent exiting with code 0.
+[ 2013-12-26 17:58:16.1523 74255/0x7fff7c578310 agents/Watchdog/Main.cpp:372 ]: All Phusion Passenger agent processes have exited. Forcing all subprocesses to shut down.
+[ 2013-12-26 17:58:16.1619 74255/0x7fff7c578310 agents/Watchdog/Main.cpp:384 ]: Sending SIGTERM to cleanup PID 74141
+[ 2013-12-26 17:58:16.4594 74269/0x106f97000 Pool2/Pool.h:751 ]: Analytics collection time...
+[ 2013-12-26 17:58:16.4656 74269/0x106f97000 Pool2/Pool.h:855 ]: Analytics collection done; next analytics collection in 4.534 sec
+[ 2013-12-26 17:58:21.0010 74269/0x106f97000 Pool2/Pool.h:751 ]: Analytics collection time...
+[ 2013-12-26 17:58:21.0072 74269/0x106f97000 Pool2/Pool.h:855 ]: Analytics collection done; next analytics collection in 4.993 sec
+2013/12/26 17:58:21 [info] 74274#0: *3 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:3000
+2013/12/26 17:58:21 [notice] 74273#0: signal 15 (SIGTERM) received, exiting
+2013/12/26 17:58:21 [notice] 74274#0: exiting
+2013/12/26 17:58:21 [notice] 74273#0: signal 23 (SIGIO) received
+2013/12/26 17:58:21 [notice] 74274#0: exit
+2013/12/26 17:58:21 [notice] 74273#0: signal 20 (SIGCHLD) received
+2013/12/26 17:58:21 [notice] 74273#0: worker process 74274 exited with code 0
+2013/12/26 17:58:21 [notice] 74273#0: exit
+[ 2013-12-26 17:58:21.3569 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:591 ]: Received command to exit gracefully. Waiting until 5 seconds after all clients have disconnected...
+[ 2013-12-26 17:58:21.3576 74267/0x7fff7c578310 agents/Watchdog/Main.cpp:710 ]: Web server exited gracefully; gracefully shutting down all agents...
+[ 2013-12-26 17:58:26.0001 74269/0x106f97000 Pool2/Pool.h:751 ]: Analytics collection time...
+[ 2013-12-26 17:58:26.0064 74269/0x106f97000 Pool2/Pool.h:855 ]: Analytics collection done; next analytics collection in 4.994 sec
+[ 2013-12-26 17:58:26.3585 74271/0x7fff7c578310 agents/LoggingAgent/Main.cpp:341 ]: Logging agent exiting with code 0.
+[ 2013-12-26 17:58:26.5079 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:597 ]: It's now 5 seconds after all clients have disconnected. Proceeding with graceful exit.
+[ 2013-12-26 17:58:26.5081 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:502 ]: Shutting down helper agent...
+[ 2013-12-26 17:58:26.5089 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:509 ]: Destroying application pool...
+[ 2013-12-26 17:58:26.5090 74269/0x7fff7c578310 Pool2/Group.h:788 ]: Begin shutting down group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:26.5090 74269/0x7fff7c578310 Pool2/Group.h:998 ]: Detaching all processes in group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:26.5091 74269/0x7fff7c578310 Pool2/Implementation.cpp:1028 ]: Starting detached processes checker
+[ 2013-12-26 17:58:26.5094 74269/0x10701d000 Pool2/Implementation.cpp:1065 ]: Checking whether any of the 1 detached processes have exited...
+[ 2013-12-26 17:58:26.5095 74269/0x10701d000 Pool2/Implementation.cpp:1074 ]: Detached process (pid=74287, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default) has 0 active sessions now. Triggering shutdown.
+[ 2013-12-26 17:58:26.6106 74269/0x10701d000 Pool2/Implementation.cpp:1065 ]: Checking whether any of the 1 detached processes have exited...
+[ 2013-12-26 17:58:26.6109 74269/0x10701d000 Pool2/Implementation.cpp:1082 ]: Detached process (pid=74287, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default) has shut down. Cleaning up associated resources.
+[ 2013-12-26 17:58:26.6110 74269/0x10701d000 Pool2/Process.h:470 ]: Cleaning up process (pid=74287, group=/Users/hongli/Projects/passenger/test/stub/wsgi#default)
+[ 2013-12-26 17:58:26.6113 74269/0x10701d000 Pool2/Implementation.cpp:1106 ]: Stopping detached processes checker
+[ 2013-12-26 17:58:26.6114 74269/0x10701d000 Pool2/Group.h:625 ]: Finishing shutdown of group /Users/hongli/Projects/passenger/test/stub/wsgi#default
+[ 2013-12-26 17:58:26.6317 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:538 ]: All threads have been shut down.
+[ 2013-12-26 17:58:26.6323 74269/0x7fff7c578310 agents/HelperAgent/Main.cpp:646 ]: Helper agent exiting with code 0.
+[ 2013-12-26 17:58:26.6539 74404/0x7fff7c578310 agents/Watchdog/Main.cpp:372 ]: All Phusion Passenger agent processes have exited. Forcing all subprocesses to shut down.
+[ 2013-12-26 17:58:26.6657 74404/0x7fff7c578310 agents/Watchdog/Main.cpp:384 ]: Sending SIGTERM to cleanup PID 74276
