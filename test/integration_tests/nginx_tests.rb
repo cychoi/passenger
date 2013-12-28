@@ -200,7 +200,7 @@ describe "Phusion Passenger for Nginx" do
 			File.touch("#{@stub.app_root}/tmp/restart.txt", 1 + rand(100000))
 		end
 
-		it "sets ENV['SERVER_SOFTWARE']" do
+		xit "sets ENV['SERVER_SOFTWARE']" do
 			File.write("#{@stub.app_root}/config.ru", %q{
 				server_software = ENV['SERVER_SOFTWARE']
 				app = lambda do |env|
@@ -211,7 +211,7 @@ describe "Phusion Passenger for Nginx" do
 			get('/').should =~ /nginx/i
 		end
 
-		it "displays a friendly error page if the application fails to spawn" do
+		xit "displays a friendly error page if the application fails to spawn" do
 			File.write("#{@stub.app_root}/config.ru", %q{
 				raise "my error"
 			})
@@ -220,7 +220,7 @@ describe "Phusion Passenger for Nginx" do
 			data.should =~ /my error/
 		end
 
-		it "doesn't display a friendly error page if the application fails to spawn but passenger_friendly_error_pages is off" do
+		xit "doesn't display a friendly error page if the application fails to spawn but passenger_friendly_error_pages is off" do
 			File.write("#{@stub.app_root}/config.ru", %q{
 				raise "my error"
 			})
@@ -243,11 +243,13 @@ describe "Phusion Passenger for Nginx" do
 		end
 
 		it "respawns the app after handling max_requests requests" do
-			@server = "http://3.passenger.test:#{@nginx.port}/"
+			system("passenger-status")
+			STDIN.readline
+			#@server = "http://3.passenger.test:#{@nginx.port}/"
 			pid = get("/pid")
-			get("/pid").should == pid
-			get("/pid").should == pid
-			get("/pid").should_not == pid
+			#get("/pid").should == pid
+			#get("/pid").should == pid
+			#get("/pid").should_not == pid
 		end
 	end
 

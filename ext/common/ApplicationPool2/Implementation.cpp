@@ -345,7 +345,7 @@ Group::Group(const SuperGroupPtr &_superGroup, const Options &options, const Com
 	disabledCount  = 0;
 	spawner        = getPool()->spawnerFactory->create(options);
 	restartsInitiated = 0;
-	m_spawning     = false;
+	processesBeingSpawned = 0;
 	m_restarting   = false;
 	lifeStatus     = ALIVE;
 	if (options.restartDir.empty()) {
@@ -419,13 +419,13 @@ Group::onSessionClose(const ProcessPtr &process, Session *session) {
 		|| process->enabled == Process::DISABLING
 		|| process->enabled == Process::DETACHED);
 	if (process->enabled == Process::ENABLED) {
-		pqueue.decrease(process->pqHandle, process->utilization());
+		pqueue.decrease(process->pqHandle, process->busyness());
 	}
 
-	/* This group now has a process that's guaranteed to be not at
-	 * full utilization.
+	/* This group now has a process that's guaranteed to be not
+	 * totally busy.
 	 */
-	assert(!process->atFullUtilization());
+	assert(!process->isTotallyBusy());
 
 	bool detachingBecauseOfMaxRequests = false;
 	bool detachingBecauseCapacityNeeded = false;
@@ -459,8 +459,8 @@ Group::onSessionClose(const ProcessPtr &process, Session *session) {
 				 * checked conditions) then now's a good time to detach
 				 * this process or group in order to free capacity.
 				 */
-				P_DEBUG("Process " << process->inspect() << " is no longer at "
-					"full utilization; detaching it in order to make room in the pool");
+				P_DEBUG("Process " << process->inspect() << " is no longer totally "
+					"busy; detaching it in order to make room in the pool");
 			} else {
 				/* This process has processed its maximum number of requests,
 				 * so we detach it.
@@ -847,7 +847,13 @@ Group::spawnThreadRealMain(const SpawnerPtr &spawner, const Options &options, un
 		}
 
 		verifyInvariants();
-		assert(m_spawning);
+		assert(processesBeingSpawned > 0);
+
+		// Temporarily mark this Group as 'not spawning' so that
+		// processLimitsReached(), pool->atFullCapacity() etc don't
+		// take this thread's spawning state into account.
+		processesBeingSpawned--;
+		assert(processesBeingSpawned == 0);
 
 		UPDATE_TRACE_POINT();
 		vector<Callback> actions;
@@ -875,22 +881,17 @@ Group::spawnThreadRealMain(const SpawnerPtr &spawner, const Options &options, un
 			done = true;
 		}
 
-		// Temporarily mark this Group as 'not spawning' so
-		// that pool->utilization() doesn't take this thread's spawning
-		// state into account.
-		m_spawning = false;
-		
 		done = done
-			|| (getProcessCount() >= options.minProcesses && getWaitlist.empty())
-			|| (options.maxProcesses != 0 && getProcessCount() >= options.maxProcesses)
+			|| (processLowerLimitsSatisfied() && getWaitlist.empty())
+			|| processUpperLimitsReached()
 			|| pool->atFullCapacity(false);
-		m_spawning = !done;
 		if (done) {
 			P_DEBUG("Spawn loop done");
 		} else {
+			processesBeingSpawned++;
 			P_DEBUG("Continue spawning");
 		}
-		
+
 		UPDATE_TRACE_POINT();
 		pool->fullVerifyInvariants();
 		lock.unlock();
@@ -908,21 +909,16 @@ bool
 Group::shouldSpawn() const {
 	return allowSpawn()
 		&& (
-			(unsigned long) getProcessCount() < options.minProcesses
-			|| (enabledCount > 0 && pqueue.top()->atFullCapacity())
+			!processLowerLimitsSatisfied()
+			|| allEnabledProcessesAreTotallyBusy()
+			// TODO: test this
+			//|| !getWaitlist.empty()
 		);
 }
 
 bool
 Group::shouldSpawnForGetAction() const {
 	return enabledCount == 0 || shouldSpawn();
-}
-
-bool
-Group::allowSpawn() const {
-	return isAlive()
-		&& !poolAtFullCapacity()
-		&& (options.maxProcesses == 0 || getProcessCount() < options.maxProcesses);
 }
 
 void
@@ -936,7 +932,7 @@ Group::restart(const Options &options, RestartMethod method) {
 	// the following tells them to abort their current work as soon as possible.
 	restartsInitiated++;
 
-	m_spawning = false;
+	processesBeingSpawned = 0;
 	m_restarting = true;
 	detachAll(actions);
 	getPool()->interruptableThreads.create_thread(
@@ -1159,6 +1155,11 @@ Group::anotherGroupIsWaitingForCapacity() const {
 		}
 	}
 	return false;
+}
+
+ProcessPtr
+Group::poolForceFreeCapacity(const Group *exclude, vector<Callback> &postLockActions) {
+	return getPool()->forceFreeCapacity(exclude, postLockActions);
 }
 
 bool

@@ -162,7 +162,7 @@ namespace tut {
 			ProcessPtr process = currentSession->getProcess();
 			currentSession.reset();
 			EVENTUALLY(5,
-				result = process->utilization() == 0;
+				result = process->busyness() == 0;
 			);
 			return body;
 		}
@@ -233,8 +233,8 @@ namespace tut {
 		// Close the session so that the process is now idle.
 		ProcessPtr process = currentSession->getProcess();
 		currentSession.reset();
-		ensure_equals(process->utilization(), 0);
-		ensure(!process->atFullCapacity());
+		ensure_equals(process->busyness(), 0);
+		ensure(!process->isTotallyBusy());
 		
 		// Verify test assertion.
 		ScopedLock l(pool->syncher);
@@ -262,7 +262,7 @@ namespace tut {
 		ProcessPtr process = session1->getProcess();
 		currentSession.reset();
 		ensure_equals(process->sessions, 1);
-		ensure(process->atFullCapacity());
+		ensure(process->isTotallyBusy());
 		
 		// Now call asyncGet() again.
 		pool->asyncGet(options, callback);
@@ -754,6 +754,45 @@ namespace tut {
 		EVENTUALLY(5,
 			result = number == 1;
 		);
+	}
+
+	TEST_METHOD(23) {
+		// Suppose the pool is full, and one tries to asyncGet() from an existant group
+		// that does not have any processes. It should kill a process from another group,
+		// and the request should succeed.
+		Options options = createOptions();
+		SessionPtr session;
+		pid_t pid1, pid2;
+		pool->setMax(1);
+
+		// Create a group /foo.
+		options.appRoot = "/foo";
+		SystemTime::force(1);
+		session = pool->get(options, &ticket);
+		pid1 = session->getPid();
+		session.reset();
+
+		// Create a group /bar.
+		options.appRoot = "/bar";
+		SystemTime::force(2);
+		session = pool->get(options, &ticket);
+		pid2 = session->getPid();
+		currentSession = session;
+		session.reset();
+
+		// Sleep for a short while to give Pool a chance to shutdown
+		// the first process.
+		usleep(300000);
+		ensure_equals("(1)", pool->getProcessCount(), 1u);
+
+		// Get from /foo.
+		options.appRoot = "/foo";
+		SystemTime::force(3);
+		setLogLevel(3);
+		session = pool->get(options, &ticket);
+		ensure("(2)", session->getPid() != pid1);
+		ensure("(3)", session->getPid() != pid2);
+		ensure_equals("(4)", pool->getProcessCount(), 1u);
 	}
 	
 	
@@ -1296,14 +1335,14 @@ namespace tut {
 		pool->setMax(1);
 
 		// Send normal request.
-		ensure_equals(sendRequest(options, "/"), "hello <b>world</b>");
+		ensure_equals(sendRequest(options, "/"), "front page");
 
 		// Modify application; it shouldn't have effect yet.
 		writeFile("tmp.wsgi/passenger_wsgi.py",
 			"def application(env, start_response):\n"
 			"	start_response('200 OK', [('Content-Type', 'text/html')])\n"
 			"	return ['restarted']\n");
-		ensure_equals(sendRequest(options, "/"), "hello <b>world</b>");
+		ensure_equals(sendRequest(options, "/"), "front page");
 
 		// Create restart.txt and send request again. The change should now be activated.
 		touchFile("tmp.wsgi/tmp/restart.txt", 1);
